@@ -8,9 +8,9 @@ const resolvers = {
     }
   },
   Mutation: {
-    async createLink(root, { link, slug }, { models }) {
+    async createLink(root, { url, slug }, { models }) {
       return models.Link.create({
-        link,
+        url,
         slug
       });
     }
