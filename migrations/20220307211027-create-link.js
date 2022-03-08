@@ -13,7 +13,6 @@ module.exports = {
         type: Sequelize.STRING
       },
       slug: {
-        allowNull: false,
         type: Sequelize.STRING
       },
       createdAt: {
