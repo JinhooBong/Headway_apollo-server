@@ -5,7 +5,7 @@ const { gql } = require("apollo-server");
 // mutations: creating a link
 const typeDefs = gql`
   type Link {
-    id: Int!
+    id: Int
     url: String!
     slug: String!
   }

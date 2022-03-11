@@ -13,7 +13,9 @@ const resolvers = {
       return models.Link.findByPk(id);
     },
     async allLinks(root, args, { models }) {
-      return models.Link.findAll();
+      return models.Link.findAll({
+        order: [["createdAt", "DESC"]]
+      });
     }
   },
   Mutation: {
@@ -38,13 +40,13 @@ const resolvers = {
               console.log(slug + " does not exist");
             }
           }
-
-          return models.Link.create({
-            url,
-            slug
-          });
         })
-        .catch((err) => console.log("err", err));
+        .catch((err) => err);
+
+      return models.Link.create({
+        url,
+        slug
+      });
     }
   }
 };
